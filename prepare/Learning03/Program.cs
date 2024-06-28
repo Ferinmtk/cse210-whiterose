@@ -1,9 +1,90 @@
 using System;
 
-class Program
+public class Fraction
 {
-    static void Main(string[] args)
+    private int _top;
+    private int _bottom;
+
+    public Fraction()
     {
-        Console.WriteLine("Hello Learning03 World!");
+        // Default to 1/1
+        _top = 1;
+        _bottom = 1;
+    }
+
+    public Fraction(int wholeNumber)
+    {
+        _top = wholeNumber;
+        _bottom = 1;
+    }
+
+    public Fraction(int top, int bottom)
+    {
+        SetFraction(top, bottom);
+    }
+
+    public int GetTop()
+    {
+        return _top;
+    }
+
+    public void SetTop(int top)
+    {
+        _top = top;
+    }
+
+    public int GetBottom()
+    {
+        return _bottom;
+    }
+
+    public void SetBottom(int bottom)
+    {
+        if (bottom == 0)
+        {
+            throw new ArgumentException("Denominator cannot be zero.");
+        }
+        _bottom = bottom;
+    }
+
+    public void SetFraction(int top, int bottom)
+    {
+        if (bottom == 0)
+        {
+            throw new ArgumentException("Denominator cannot be zero.");
+        }
+        _top = top;
+        _bottom = bottom;
+    }
+
+    public string GetFractionString()
+    {
+        return $"{_top}/{_bottom}";
+    }
+
+    public double GetDecimalValue()
+    {
+        return (double)_top / _bottom;
+    }
+
+    public static void Main(string[] args)
+    {
+        Fraction fraction1 = new Fraction();         // Defaults to 1/1
+        Fraction fraction2 = new Fraction(9);        // Represents 5/1
+        Fraction fraction3 = new Fraction(3, 8);     // Represents 3/4
+        Fraction fraction4 = new Fraction(1, 3);     // Represents 1/3
+
+        // Output each fraction followed by its decimal value
+        Console.WriteLine(fraction1.GetFractionString());
+        Console.WriteLine(fraction1.GetDecimalValue());
+
+        Console.WriteLine(fraction2.GetFractionString());
+        Console.WriteLine(fraction2.GetDecimalValue());
+
+        Console.WriteLine(fraction3.GetFractionString());
+        Console.WriteLine(fraction3.GetDecimalValue());
+
+        Console.WriteLine(fraction4.GetFractionString());
+        Console.WriteLine(fraction4.GetDecimalValue());
     }
 }
