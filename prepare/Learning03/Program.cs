@@ -7,7 +7,8 @@ public class Fraction
 
     public Fraction()
     {
-        // Default to 1/1
+
+        
         _top = 1;
         _bottom = 1;
     }
@@ -69,12 +70,13 @@ public class Fraction
 
     public static void Main(string[] args)
     {
-        Fraction fraction1 = new Fraction();         // Defaults to 1/1
-        Fraction fraction2 = new Fraction(9);        // Represents 5/1
-        Fraction fraction3 = new Fraction(3, 8);     // Represents 3/4
-        Fraction fraction4 = new Fraction(1, 3);     // Represents 1/3
+        Fraction fraction1 = new Fraction();         
+        Fraction fraction2 = new Fraction(9);        
+        Fraction fraction3 = new Fraction(3, 8);     
+        Fraction fraction4 = new Fraction(1, 3);     
 
-        // Output each fraction followed by its decimal value
+
+        
         Console.WriteLine(fraction1.GetFractionString());
         Console.WriteLine(fraction1.GetDecimalValue());
 
